@@ -334,7 +334,7 @@ int basic_binary_search_test_worst(char * name_file, int line_count_input) {
   void * block_end[MAX_BLOCK];
   void * next_free;
   void * mem_end;
-  uint64_t size_hex = 1000000000; // 1GB
+  uint64_t size_hex = 100000000; // 1GB // changed block size to 100 MB
   size_t mem_size = (size_t)(size_hex);
 
   int p;

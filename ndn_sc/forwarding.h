@@ -122,11 +122,11 @@ int
 free_prefixes(Name_Entry_t * name_list, int line_count);
 
 // binary search of hash tables that performs string verification only in the end
-inline uint16_t
+uint16_t
 basic_binary_search(Hash_Table_t ** hts, int i, char * query, int * lens, uint64_t * hash_values);
 
 // binary search of hash tables that performs string verification whenever there is a fingerprint match
-inline uint16_t
+uint16_t
 basic_binary_search_verify(Hash_Table_t ** hts, int i, char * query, int * lens, uint64_t * hash_values);
 
 // testing the worst-case performance of binary search of hash tables

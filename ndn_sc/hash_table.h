@@ -53,7 +53,7 @@
 #define BUCKET_SIZE 7         // The number of fingerprint entries in each hash bucket.
 
 #define MULTI_BLOCK_HT 64     // At most 64 blocks
-#define HT_BLOCK_SIZE 1024 * 1024 * 16 // 16 million buckets, 128 million entries
+#define HT_BLOCK_SIZE 1024 * 16 // 16 million buckets, 128 million entries // changed block size to 16 thousand buckets
 
 // Fingerprint entry structure
 typedef struct FP_Addr{
@@ -102,11 +102,11 @@ hash_table_destroy(Hash_Table_t * ht);
 Hash_Table_t * hash_table_init_socket(int size, int left, int right, int socket);
 
 // Hash lookup that verifies only fingerprints
-inline int
+int
 hash_table_lookup(Hash_Table_t * ht, char* key, int len, uint64_t hash_value, char ** addr_entry);
 
 // Hash lookup that verifies strings at each step
-inline int
+int
 hash_table_lookup_verify(Hash_Table_t * ht, char* key, int len, uint64_t hash_value, char ** addr_entry);
 
 // Insert an item into the specified hash table.
